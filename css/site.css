@@ -37,6 +37,8 @@ a:hover {
 
 /* This is the basic box that the main part of the page goes into */
 .container {
+  position:absolute;
+  width: 100vh;
   display: flex;
   flex-direction: column;
   align-self: center;
@@ -52,7 +54,9 @@ a:hover {
 /* ADDED */
 .stories-container{
   height: calc(100vh - 100px);
+  width:100vh;
   overflow: scroll;
+  padding:10px;
 }
 
 
