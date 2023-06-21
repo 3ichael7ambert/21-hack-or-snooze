@@ -1,21 +1,32 @@
 ## Part 0
+
 Explore working code and api
+
 ## Part 1
+
 Explore starter code
+
 ## Part 2
+
 *A*
 addStrory() -> models.js
 *b*Create form - hidden
 *b2*navbar with the text of “submit”.
 *b3*Write a function in nav.js that is called when users click that navbar link.
 *b4*Write a function in stories.js that is called when users submit the form. 
+
 ## Part 3
+
 *a*Allow logged in users to “favorite” and “un-favorite” a story.
 *b*Allow logged in users to see a separate list of favorited stories.
 ## Part 4 
+
 Allow logged in users to remove a story. Dom and API
 ## Part 5
+
 Restyle the landing and login page to match this mock-up 
+
+
 
 
 
