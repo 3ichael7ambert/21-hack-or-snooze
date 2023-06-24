@@ -106,27 +106,29 @@ class StoryList {
 
   /** Removew story from the  API and delete from the story lists.
    */
-// async removeStory(user, storyId) {
-//   try {
-//     await axios.delete(`${BASE_URL}/stories/${storyId}`, {
-//       data: { token: user.loginToken }
-//     });
+async removeStory(user, storyId) {
+  try {
+    await axios.delete(`${BASE_URL}/stories/${storyId}`, {
+      data: { token: user.loginToken }
+    });
 
-//     // Remove the story from the StoryList and the User's ownStories
-//     const index = this.stories.findIndex(story => story.storyId === storyId);
-//     if (index !== -1) {
-//       this.stories.splice(index, 1);
-//     }
-//     const userIndex = user.ownStories.findIndex(s => s.storyId === storyId);
-//     if (userIndex !== -1) {
-//       user.ownStories.splice(userIndex, 1);
-//     }
+    // Remove the story from the StoryList and the User's ownStories
+    // const index = this.stories.findIndex(story => story.storyId === storyId);
+    // if (index !== -1) {
+    //   this.stories.splice(index, 1);
+    // }
+      this.stories = this.stories.filter(story => story.storyId !== storyId); //ANH MAI
+    // const userIndex = user.ownStories.findIndex(s => s.storyId === storyId);
+    // if (userIndex !== -1) {
+    //   user.ownStories.splice(userIndex, 1);
+    // }
+    user.ownStories = user.ownStories.filter(story => story.storyId !== storyId);//ANH MAI
 
-//   } catch (error) {
-//     console.error("Failed to remove story:", error);
-//     throw error;
-//   }
-// }
+  } catch (error) {
+    console.error("Failed to remove story:", error);
+    throw error;
+  }
+}
 
 }
 
@@ -292,6 +294,6 @@ class User {
   /** Return true/false if given Story instance is a favorite of this user. */
 
   isFavorite(story) {
-    return this.favorites.some(s => (s.storyId === story.storyId));
+    return this.favorites.some(s => (s.storyId === story.storyId)); //find instead of some - boolean ANH MAI
   }
 }

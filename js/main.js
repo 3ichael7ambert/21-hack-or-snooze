@@ -48,7 +48,9 @@ function hidePageComponents() {
     $submitForm, //ADDED
     $loginForm,
     $signupForm,
-    $userProfile //ADDED
+    $userProfile, //ADDED
+    $favoritedStories,
+    $ownStories
   ];
   components.forEach(c => c.hide());
 }

@@ -224,12 +224,13 @@ async function toggleStoryFavorite(evt) {
   if ($tgt.hasClass("fas")) {
     // currently a favorite: remove from user's fav list and change star
     await currentUser.removeFavorite(story);
-    $tgt.closest("i").toggleClass("fas far");
   } else {
     // currently not a favorite: do the opposite
     await currentUser.addFavorite(story);
-    $tgt.closest("i").toggleClass("fas far");
   }
+
+  $tgt.closest("i").toggleClass("fas far"); //ANH MAI
+  
 }
 
 $storiesLists.on("click", ".star", toggleStoryFavorite);
